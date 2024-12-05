@@ -1,7 +1,7 @@
 import { newProducts } from '@/data/newProducts';
 import { recommendedProducts } from '@/data/recommendedProducts';
-import { NewProductCard } from '@/layout/NewProductCard';
-import { RecommendedProductCard } from '@/layout/RecommendedProductCard';
+import { NewProductCard } from '@/layout/Card/NewProductCard';
+import { RecommendedProductCard } from '@/layout/Card/RecommendedProductCard';
 import React from 'react';
 
 

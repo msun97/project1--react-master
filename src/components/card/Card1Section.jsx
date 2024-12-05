@@ -1,13 +1,15 @@
 import { brands } from "@/data/brands";
 import { epoCards } from "@/data/epoCards";
-import { BrandCard } from "@/layout/BrandCard";
-import { EpoCard } from "@/layout/EpoCard";
-import { SectionWrapper } from "@/components/SectionWrapper";
-import { CardRenderer } from "@/components/CardRenderer";
+import { BrandCard } from "@/layout/Card/BrandCard";
+import { EpoCard } from "@/layout/Card/EpoCard";
+import { SectionWrapper } from "@/components/card/SectionWrapper";
+import { CardRenderer } from "@/components/card/CardRenderer";
+
+import styles from "../css/Card1.module.scss";
 
 const Card1Section = () => {
   return(
-    <>
+    <section id="card1" className={styles.Card1Section}>
     <SectionWrapper
       id="card1-epo"
       title="Every Pouch One CLIO"
@@ -19,7 +21,7 @@ const Card1Section = () => {
     <SectionWrapper id="card1-brands" title="Brands" learnMoreLink="#">
       <CardRenderer data={brands} Component={BrandCard} className="brands-card" />
     </SectionWrapper>
-  </>
+  </section>
   )
 };
 

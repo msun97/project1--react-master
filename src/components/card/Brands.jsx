@@ -12,7 +12,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <div className="brands">
+    <div className={`brands ${styles.brands}`}>
       <h2 className="brands__title">Brands</h2>
       <div className="brands__card">
         <div className="swiper brandswiper">
