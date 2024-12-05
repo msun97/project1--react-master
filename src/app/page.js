@@ -9,8 +9,8 @@ import Card3Section from "@/components/Card3Section";
 export default function Home() {
   return (
     <main>
-      <IntroSection />
       <Nav />
+      <IntroSection />
       <Card1Section />
       <Card2Section />
       <Card3Section />

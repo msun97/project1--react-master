@@ -2,45 +2,39 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.min.css'
+import { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.css';
+import { slides } from '@/data/slides';
 
 
 const IntroSwiper = () => {
-  const slides = [
-    {
-      video: '/video/pc_main_visual1.mp4',
-      title: 'Global market leader',
-      title2: 'CLIO COSMETICS',
-      subtitle: '새로운 변화를 즐기는 사람에게 자신감과 즐거움을.',
-    },
-    {
-      video: '/video/pc_main_visual2.mp4',
-      title: 'PEOPLE & FOREST',
-      title2: 'Comunication',
-      subtitle: '배려와 존중을 기반으로, 사람과 지역사회와 함께 소통하고 성장하는.',
-    },
-    {
-      video: '/video/pc_main_visual3.mp4',
-      title: 'CREATE & CULTURE',
-      title2: 'Social Resposibility',
-      subtitle: '사회에도 선한 영향력이 발휘될 수 있도록 즐거움을 전파하고 온기를 나눕니다.',
-    },
-  ];
-
   return (
     <section className='intro'>
-      <Swiper className='introswiper' pagination={{ clickable: true }} navigation>
+      <Swiper 
+        className='introswiper' 
+        modules={[Pagination, Navigation]} 
+        pagination={{ clickable: true }} 
+        navigation 
+        loop
+      >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <video src={slide.video} autoPlay loop muted />
-            <div className="txt">
-              <div className='title'>
+          <SwiperSlide key={index} className='intro-slide'> 
+            <video 
+              src={slide.video} 
+              autoPlay 
+              loop 
+              muted 
+              aria-label={`Slide ${index + 1}`} 
+              className='intro-video' 
+            />
+            <div className="intro-txt">
+              <div className='intro-title'>
                 {slide.title}
-                <div className='title title2'>
-                  {slide.title2}
+                <div className='intro-description'>
+                  {slide.subtitle}
                 </div>
               </div>
-              <div className='subtitle'>{slide.subtitle}</div>
+              <div className='intro-description'>{slide.description}</div>
             </div>
           </SwiperSlide>
         ))}
