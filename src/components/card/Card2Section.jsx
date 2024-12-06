@@ -1,8 +1,8 @@
 import { brandNews } from "@/data/brandNews";
-import { BrandNewsCard } from "@/layout/BrandNewsCard";
-import { SocialMediaCard } from "@/layout/SocialMediaCard";
-import { SectionWrapper } from "@/components/SectionWrapper";
-import { CardRenderer } from "@/components/CardRenderer";
+import { BrandNewsCard } from "@/layout/Card/BrandNewsCard";
+import { SocialMediaCard } from "@/layout/Card/SocialMediaCard";
+import { SectionWrapper } from "@/components/card/SectionWrapper";
+import { CardRenderer } from "@/components/card/CardRenderer";
 
 const Card2Section = () => {
   return (

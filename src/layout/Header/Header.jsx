@@ -1,6 +1,6 @@
 'use client'
 
-import Nav from '@/components/Nav';
+import Nav from '@/layout/Header/Nav';
 import { Util } from '@/layout/Header/Util';
 import Search from '@/layout/Header/Search';
 import Link from 'next/link';

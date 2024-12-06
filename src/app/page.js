@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "@/components/Nav";
-import IntroSection from "@/components/IntroSection";
-import Card1Section from "@/components/Card1Section";
-import Card2Section from "@/components/Card2Section";
-import Card3Section from "@/components/Card3Section";
+import Nav from "@/layout/Header/Nav";
+import IntroSection from "@/components/intro/IntroSection";
+import Card1Section from "@/components/card/Card1Section";
+import Card2Section from "@/components/card/Card2Section";
+import Card3Section from "@/components/card/Card3Section";
 
 
 export default function Home() {

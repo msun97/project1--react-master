@@ -1,4 +1,5 @@
-import "./globals.css";
+import "./css/globals.scss";
+import "./css/layout.module.scss"
 import Meta from "@/components/Meta.jsx"
 import SkipNav from "@/layout/SkipNav.jsx";
 import Header from "@/layout/Header/Header";
