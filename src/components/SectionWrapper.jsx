@@ -7,7 +7,7 @@ export const SectionWrapper = ({ id, title, description, children, learnMoreLink
     {children}
     {learnMoreLink && (
       <div className="learn-more">
-        <a href={learnMoreLink}>Learn more</a>
+        <a href={learnMoreLink}>Learn ㅇㅇmore</a>
       </div>
     )}
   </section>
