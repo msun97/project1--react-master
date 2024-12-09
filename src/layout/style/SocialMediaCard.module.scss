@@ -1,0 +1,29 @@
+@use "../../app/css/breakpoint" as break;
+@use "../../app/css/variable" as vars;
+@use "../../app/css/utils" as util;
+
+
+.sns-youtube{
+  margin-bottom: 16px;
+  @include break.tabletMore{
+    width: 45%;
+  }
+  iframe{
+    width: 100%;
+    height: 216px;
+    margin-top: 14px;
+    border-radius: 20px;
+    @include break.mobileMore{
+      height: 430px;
+    }
+    @include break.tabletMore{
+      height: 408px;
+    }
+  }
+}
+
+.sns-instagram{
+  @include break.tabletMore{
+    width: 55%;
+  }
+}

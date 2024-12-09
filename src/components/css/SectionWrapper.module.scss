@@ -1,0 +1,59 @@
+@use '../../app/css/breakpoint' as break;
+
+.content{
+  display: flex;
+  flex-direction: column;
+  @include break.tabletMore{
+    gap: 10px;
+  } 
+}
+
+.years{
+  height: 42px;
+  font-size: 2rem;
+  font-weight: 500;
+  opacity: 0.5;
+  @include break.mobileMore{
+    height: 44px;
+  }
+}
+
+.subTitle{
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  @include break.mobileMore{
+   font-size: 2.7rem;
+  }
+  @include break.tabletMore{
+    font-size: 3rem;
+  } 
+}
+
+
+.title{
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 150%;
+  @include break.mobileMore{
+    font-size: 5rem;
+   }
+   @include break.tabletMore{
+    font-size: 6rem;
+  } 
+}
+
+.descripte{
+  font-size: 1.7rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-top: 5px;
+  @include break.mobileMore{
+    margin-top: 2px;
+    font-size: 1.8rem;
+   }
+   @include break.tabletMore{
+    font-size: 2rem;
+  } 
+}

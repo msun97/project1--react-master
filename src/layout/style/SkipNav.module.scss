@@ -1,0 +1,27 @@
+@use '../../app/css/utils' as util;
+@use '../../app/css/variable' as vars;
+
+#skipNav{
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  background-color: vars.$gray-90;
+}
+
+.skipNavLink{
+  &:not(:focus) {
+    @include util.sr-only;
+  }
+  &:focus {
+    @include util.flex-layout($ai: center, $jc: center,);
+    @include util.focus($color: vars.$white, $alpha: 0.9);
+    font-size: 1.5rem;
+    color:vars.$white;
+    width: 100%;
+    height: 3.2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

@@ -1,0 +1,60 @@
+@use '../../app/css/variable' as vars;
+@use '../../app/css/breakpoint' as break;
+
+.epoCard{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: auto;
+  margin-top:86px;
+  @include break.mobileMore{
+    flex-direction: row;
+    margin-top: 50px; 
+   }
+   @include break.tabletMore{
+    margin-top: 64px;
+  } 
+  .epoCardItem{
+    position: relative;
+    width:100%;
+    height: 150px;
+    @include break.mobileMore{
+      height: 235.47px;
+     }
+     @include break.tabletMore{
+      height: 500px;
+    }
+  }
+  .txt{
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 72px;
+    z-index: 10;
+    @include break.tabletMore{
+      height: 96px;
+    }
+    .txtKo{
+      font-size: 3rem;
+      font-weight: 700;
+      @include break.tabletMore{
+        font-size: 4rem;
+      }
+    }
+    .txtEn{
+      font-size: 2.4rem;
+      font-weight: 700;
+      @include break.tabletMore{
+        font-size: 3rem;
+      }
+    }
+  }
+}
+

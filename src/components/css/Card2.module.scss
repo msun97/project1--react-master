@@ -1,0 +1,67 @@
+@use '../../app/css/variable' as vars;
+@use '../../app/css/breakpoint' as break;
+
+.Card2Section{
+  position: relative;
+  background-image: linear-gradient(vars.$primary, #644190);
+  z-index: 1;
+  transform: translateY(-175px);
+  #brandNews{
+    position: relative;
+    margin: 40px 15px;
+    @include break.mobileMore{
+      transform: translateY(-105px);
+      margin: 90px 30px;
+    }
+    @include break.tabletMore{
+      transform: translateY(-160px);
+      margin: 140px 160px;
+    }
+  }
+  #sns{
+    margin-top: 30px;
+    font-size: 2rem;
+    margin-bottom: 100px;
+    position: relative;
+    margin: 40px 15px;
+    @include break.mobileMore{
+      margin: 90px 30px;
+    }
+    @include break.tabletMore{
+      margin: 140px 160px;
+    }
+    .snsCard{
+      margin-top: 20px;
+      @include break.mobileMore{
+        margin-top: 30px;
+      }
+      @include break.tabletMore{
+        display: flex;
+        gap: 80px;
+        margin-top: 60px;
+      }
+      .snsInstagramCard{
+        width: 100%;
+          display: flex;
+          margin-top: 14px;
+          gap: 15px;
+          @include break.mobileMore{
+            gap: 20px;
+            margin-bottom: 184px;
+          }
+          @include break.tabletMore{
+            gap: 24px;
+            height: 408px;
+            margin-bottom: 350px;
+          }
+          a{
+            display: block;
+            width: 100%;
+          }
+          &inner{
+            background-color: #fff;
+          }
+      }
+    }
+  }
+}

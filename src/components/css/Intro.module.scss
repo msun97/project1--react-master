@@ -1,0 +1,208 @@
+@use '../../app/css/breakpoint' as break;
+@use '../../app/css/variable' as vars;
+
+.intro{
+  position: relative;
+}
+.introSwiper {
+  width: 100%;
+  height: 865px;
+  @include break.mobileMore{
+    height: 925px;
+  }
+  @include break.tabletMore{
+    height: 953px;
+  }
+  .swiperSlide { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    video{
+      filter: brightness(70%);
+    }
+    .introTxt{
+      position: absolute;
+      padding: 0px 15px;
+      @include break.mobileMore{
+        padding: 0 30px;
+      }
+      @include break.tabletMore{
+        display: flex;
+        width: 100%;
+        padding: 276px;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      .introTitle{
+        font-size: 30px;  
+        font-weight: 700;
+        line-height: 1.2;
+        text-wrap: nowrap;
+        @include break.mobileMore{
+          font-size: 6rem;
+        }
+        @include break.tabletMore{
+          width: 50%;
+          font-size: 9.6rem;
+        }
+      }
+      .introSubTitle{
+        position: relative;
+        @include break.tabletMore{
+          font-size: 6rem;
+        }
+        &::after{
+          position: absolute;
+          bottom: 7px;
+          transform: translateX(5%);
+          content:"";
+          width: 100%;
+          height: 1px;
+          background-color: vars.$white;
+          @include break.tabletMore{
+            width: 0;
+           }
+        }
+      }
+      .introDescription{
+        width: 286px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: rgba($color: vars.$white, $alpha:0.4);
+        margin-top: 10px;
+        @include break.mobileMore{
+          width: 100%;
+        }
+        @include break.tabletMore{
+          width: 50%;
+          text-wrap: nowrap;
+          text-align: right;
+          &::after{
+            display: block;
+            right: 0px;
+            bottom: 7px;
+            content:"";
+            height: 1px;
+            background-color: vars.$white;
+         }
+      }
+      }
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  display: flex;
+  width: 158px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+  bottom: 76px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 10;
+
+  @include break.mobileMore {
+    width: 162px;
+    height: 29px;
+    bottom: 106px;
+  }
+
+  @include break.tabletMore {
+    width: 222px;
+    height: 16px;
+    bottom: 140px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 100%;
+    height: 144px;
+    color: vars.$white;
+    font-weight: 700;
+    opacity: 1;
+    cursor: pointer; // 커서 스타일 추가
+  }
+
+  .swiper-pagination {
+    top: auto;
+    bottom: auto;
+
+    &-bullet {
+      border: vars.$white 2px solid;
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0);
+      cursor: pointer; // 커서 스타일 추가
+
+      @include break.tabletMore {
+        width: 32px;
+        height: 5px;
+        border: vars.$white 1px solid;
+        border-radius: 20px;
+      }
+
+      &-active {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+
+.scroll{
+  position: absolute;
+  bottom: 55px;
+  right: 30px;
+  transform: translateY(50%);
+  z-index: 1;
+  color: vars.$white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  writing-mode: vertical-rl;
+  @include break.mobileMore{
+    bottom: 125px;
+  }
+  @include break.tabletMore{
+    right: 40px;
+    }
+  &::before{
+    position: relative;
+    content: "";
+    display: block;
+    width:1px;
+    height: 102px;
+    margin-left: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: 57px;
+    left: 100%;
+    display: block;
+    width:2px;
+    height: 45px;
+    background-color: vars.$white;
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-iteration-count:infinite;
+  }
+}
+
+
+@keyframes scroll{
+  from{
+    top:0;
+  }
+  to{
+    top:57px;
+  }
+}

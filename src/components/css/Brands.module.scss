@@ -1,0 +1,60 @@
+@use '../../app/css/variable' as vars;
+@use '../../app/css/breakpoint' as break;
+
+.brandsCard{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 13px;
+  height: 336px;
+  margin-top:65px;
+  margin-bottom:140px;
+  overflow: visible;
+  @include break.mobileMore{
+    margin-top: 50px;
+    margin-bottom: 250px;
+  }
+  @include break.tabletMore{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 280px;
+    margin-top: 60px;
+    margin-bottom: 260px;
+  }
+  .brandSwiper{
+    padding: 0 15px;
+    @include break.mobileMore{
+      padding: 0 30px;
+    }
+    @include break.tabletMore{
+      height: auto;
+      padding: 0 160px;
+    }
+  }
+    .swiperSlide{
+      width:300px;
+      @include break.tabletMore{
+        width: 450px ;
+        height: 280px;
+        margin-right: 16px !important;
+      }
+    }
+}
+
+
+.brandsIncard{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width:300px;
+  height: 161.5px;
+  padding: 15.5px 0px;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+  @include break.tabletMore{
+    gap: 13px;
+    width: 450px;
+    height: 280px;
+  }
+}

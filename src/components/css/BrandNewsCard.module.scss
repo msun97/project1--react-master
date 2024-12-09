@@ -1,0 +1,92 @@
+@use '../../app/css/variable' as vars;
+@use '../../app/css/breakpoint' as break;
+
+.brandNewsCard{
+  display: flex;
+  flex-direction: column;
+  margin-top: 76px;
+  gap: 10px;
+  @include break.mobileMore{
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 12px;
+  }
+  @include break.tabletMore{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .brandnewsItem{
+    height: 271px;
+    background-color: rgba(vars.$black, 0.5);
+    border-radius: 20px;
+    @include break.mobileMore{
+      width: 33.3%;
+      height: 254px;
+    }
+    @include break.tabletMore{
+      width: 497px;
+      height: 430px;
+    }
+    &Txt{
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 28px;
+      @include break.mobileMore{
+        height: 88px;
+        gap:10px;
+        padding: 0 12px;
+        margin-top: 16px;
+      }
+      @include break.tabletMore{
+        height: 130px;
+        gap: 25px;
+        padding: 0 24px;
+        margin-top: 30px;
+      }
+      &Tag{
+        color: vars.$gray-40;
+        font-size: 1.4rem;
+        font-weight: 400;
+        @include break.mobileMore{
+          font-size: 1.3rem;
+        }
+        @include break.tabletMore{
+          font-size: 1.4rem;
+        }
+      }
+      &Cont{
+        font-size: 1.6rem;
+        font-weight: 400;
+        @include break.mobileMore{
+          height: 42px;
+          font-size: 1.4rem;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; // 두 줄까지만 표시
+          -webkit-box-orient: vertical;
+        }
+        @include break.tabletMore{
+          height: 60px;
+          font-size: 2rem;
+          display: block;
+        }
+      }
+    }
+    &Img{
+      height: 171px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 50%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      @include break.mobileMore{
+        height: 150px;
+      }
+      @include break.tabletMore{
+        height: 270px;
+      }
+    }
+  }
+}
