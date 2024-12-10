@@ -432,3 +432,48 @@ caption {
     background-size: cover;
   }
 }
+
+
+.intro-txt{
+  opacity: 0;
+}
+
+
+.swiper-slide-active { 
+  .intro-txt {
+  opacity: 1;
+  }
+}
+
+.scroll-section {
+  position: relative;
+}
+
+.intro-section,
+.card1-section,
+.card2-section {
+  height: 100vh;
+  width: 100%;
+}
+
+.intro-section {
+  position: relative;
+  z-index: 1;
+}
+
+.card1-section {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+
+.card2-section {
+  position: relative;
+  z-index: 3;
+  background: #fff;
+}
+
+main {
+  position: relative;
+  overflow-x: hidden;
+}

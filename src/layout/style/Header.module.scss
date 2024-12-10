@@ -11,13 +11,15 @@
   z-index: 10000;
   width:100vw;
   height:66px;
+  transform: translateY(-100px);
   border-bottom:(1px solid vars.$gray-40);
-  transition: all 0.3s;
+  transition: height 0.3s;
   @include break.mobileMore{
     height: 80px;
   }
   &.active{
     content: "";
+    height: 60px;
     background-color: rgba($color: vars.$black, $alpha:0.4 )!important;
     backdrop-filter: blur(90px);
     border-bottom:(1px solid vars.$gray-70);

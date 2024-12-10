@@ -1,6 +1,7 @@
 import { SectionWrapper } from "@/components/card/SectionWrapper";
 import { EPOCard } from "@/components/card/EPOCard";
 import Brands from "./Brands";
+import 'swiper/swiper-bundle.css';
 
 import styles from "../css/Card1.module.scss";
 
