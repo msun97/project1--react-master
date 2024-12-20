@@ -1,20 +1,23 @@
 @use '../../app/css/breakpoint' as break;
 
+.wrap{
+  position: relative;
+}
 .content{
   display: flex;
   flex-direction: column;
+
   @include break.tabletMore{
     gap: 10px;
   } 
 }
 
 .years{
-  height: 42px;
   font-size: 2rem;
   font-weight: 500;
   opacity: 0.5;
   @include break.mobileMore{
-    height: 44px;
+    margin-bottom: 10px;
   }
 }
 
@@ -36,8 +39,10 @@
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 150%;
+  margin-bottom: 40px;
   @include break.mobileMore{
     font-size: 5rem;
+    margin-bottom: 15px;
    }
    @include break.tabletMore{
     font-size: 6rem;

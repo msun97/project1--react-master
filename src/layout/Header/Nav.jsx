@@ -18,7 +18,7 @@ const Nav = ({ variant = 'default' }) => {
         !isHeaderNav && isNavAllOpen ? styles.active : ''
       }`}
     >
-      <ul className={isHeaderNav ? styles.gnb__depth1 : ''}>
+      <ul className={isHeaderNav ? styles.gnbDepth1 : ''}>
         {navData.map((item, index) => (
           <NavItem
             key={index}

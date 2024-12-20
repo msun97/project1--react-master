@@ -1,0 +1,131 @@
+@use '../../app/css/breakpoint' as break;
+@use '../../app/css/variable' as vars;
+
+#footer{
+background-color: vars.$gray-90;
+  width: 100%;
+  height: 260px;
+  color: vars.$white;
+  @include break.mobileMore{
+    height: 246px;
+  }
+  @include break.tabletMore{
+    height: 315px;
+  }
+}
+
+.footerTop{
+    height: 59px;
+    border-bottom: vars.$gray-70 1px solid;
+    @include break.mobileMore{
+      height: 60px;
+    }
+    @include break.tabletMore{
+      height: 79px;
+    }
+}
+
+.inner{
+    width: 100%;  
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    @include break.mobileMore{
+      padding: 0px 30px;
+    }
+    @include break.tabletMore{
+      padding: 0 160px;
+    }
+}
+
+.sns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include break.mobileMore{
+      gap: 15px;
+    }
+    @include break.tabletMore{
+      gap: 20px;
+    }
+    svg{
+        color: vars.$gray-60;
+        width: 20px;
+        height: 20px;
+        @include break.tabletMore{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.footerTopRight{
+    font-size: 1.4rem;
+    font-weight: 400;
+    @include break.mobileMore{
+      font-size: 1.5rem;
+    }
+    @include break.tabletMore{
+      font-size: 1.6rem;
+    }
+}
+
+
+.footerBottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 30px 55px 0 55px;
+    @include break.mobileMore{
+      text-align: left;
+      flex-direction: row;
+      padding: 35px 30px 0 30px;
+      justify-content: space-between;
+    }
+    @include break.tabletMore{
+        padding: 50px 160px 0 160px;
+      }
+}
+
+.footerInfo{
+    display: flex;
+      flex-direction: column;
+      gap: 14px;
+      @include break.mobileMore{
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      @include break.tabletMore{
+        gap: 30px;
+      }
+}
+
+.name{
+    font-size: 1.6rem;
+      font-weight: 700;
+}
+
+.adress, .rights{
+    font-size: 1.2rem;
+    color: vars.$gray-50;
+    @include break.tabletMore{
+        font-size: 1.4rem;
+      }
+}
+
+.logo{
+    width: 160px;
+    height: 14px;
+    background-image: url('../../../public/images/pattern/head_logo.png');
+    background-size: cover;
+    @include break.tabletMore{
+      width: 270px;
+      height: 24px;
+    } 
+}

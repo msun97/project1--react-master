@@ -1,0 +1,81 @@
+@use "../../app/css/variable" as vars;
+@use "../../app/css/breakpoint" as break;
+
+.util{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: vars.$white;
+    font-size: 1.5em;
+    font-weight: 500;
+    @include break.mobileMore{
+        gap: 23px;
+        font-size: 1.6rem;
+      }
+      @include break.tabletMore{
+        gap : 15px;
+        font-size: 1.8rem;
+      }
+      button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include break.tabletMore{
+          display: none;
+      }
+    }
+}
+
+.utilEtc{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      @include break.mobileMore{
+        gap: 26px;
+      }
+      button{
+        display: none;
+        position: relative;
+        text-align: center;
+        @include break.mobileMore{
+          display: block;
+        }
+    }
+    button::before{
+      position: absolute;
+        content: '';
+        left:-8px;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        @include break.mobileMore{
+          left: -13px;
+        }
+      }
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+        width: 20px;
+        height: 20px;
+
+    }
+}
+
+.hamburger{
+  @include break.tabletMore{
+    display:none;
+  }
+  svg{
+    width: 25px;
+    height: 25px;
+    @include break.mobileMore{
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

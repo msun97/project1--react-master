@@ -1,0 +1,136 @@
+@use '../app/css/variable' as vars;
+@use '../app/css/breakpoint' as break;
+
+.category{
+  @include break.tabletMore{
+    width: calc((100% - 30px)/3);
+  }
+
+    height: 45px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: vars.$gray-60;
+    @include break.mobileMore{
+      width: 110px;
+      font-size: 1.8rme;
+    }
+  }
+
+
+.newsItem{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+    height: 128px;
+    padding:14px 5px;
+    color: vars.$gray-90;
+    font-size: 1.5rem;
+    @include break.mobileMore{
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: nowrap;
+      gap: 0px;
+      height: 60px;
+      padding: 0;
+      font-size: 1.6rem;
+      align-items: center;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: vars.$gray-20;
+    }
+}
+
+@include break.mobileMore{
+
+.num{
+    width: 5%;
+  }
+  .category{
+    width: 12%;
+  }
+  .tlt{
+    width:58%;
+  }
+  .day{
+    width:15%;
+  }
+  .see{
+    width: 10%;
+  }
+}
+
+.num{
+    height: auto;
+  }
+  .category{
+    height: auto;
+    color: vars.$gray-60;
+  }
+  .tlt{
+    padding: 15px 0;
+    display: flex;
+    width: 95%;
+    height: 23px;
+    align-items: center;
+    @include break.mobileMore{
+      gap: 5px;
+      width: 58%;
+      height: 19px;
+    }
+    
+    .cont{
+      padding: 5.5px 0;
+      width: auto;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; 
+      font-size: 1.5rem;
+      @include break.mobileMore{
+        width: auto;
+        padding: 0;
+        font-size: 1.6rem;
+        text-align: left;
+      }
+    }
+}
+
+.new{
+    padding: 2px 0;
+    margin-left: 5px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: vars.$primary-60;
+    flex-shrink: 0; 
+    color: vars.$white;
+    font-size: 1.6rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    @include break.mobileMore{
+      margin-left: 0;
+    }
+  }
+
+  .see{
+    color:vars.$gray-60;
+  }
+
+  .btnnum{
+    width: 29px;
+    height: 29px;
+    border-radius: 10px;
+    @include break.mobileMore{
+      width: 36px;
+      height: 36px;
+    }
+  }

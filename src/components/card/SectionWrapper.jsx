@@ -12,7 +12,7 @@ export const SectionWrapper = ({ id, title, subTitle, years, description, childr
 
     // 각 글자를 span 태그로 감싸는 처리
     const words = subtitle.innerText.split('');
-    subtitle.innerHTML = words.map(word => `<span class="${styles.letter}">${word}</span>`).join('');
+    subtitle.innerHTML = words.map(word => `<span className="${styles.letter}">${word}</span>`).join('');
     const letterElements = subtitle.querySelectorAll(`.${styles.letter}`);
     
     // IntersectionObserver로 스크롤 시 opacity 변경
@@ -41,6 +41,7 @@ export const SectionWrapper = ({ id, title, subTitle, years, description, childr
   }, []);
 
   return (
+    <div className={styles.wrap}>
     <section id={id}>
       <div className={ContentclassName ? ContentclassName : styles.content}>
         <div className={styles.years}>{years ? years : ''}</div>
@@ -51,7 +52,8 @@ export const SectionWrapper = ({ id, title, subTitle, years, description, childr
         {description && <div className={styles.descripte}>{description}</div>}
       </div>
       {children}
-      <LearnMore learnMoreLink={learnMoreLink}></LearnMore>
     </section>
+    <LearnMore learnMoreLink={learnMoreLink}></LearnMore>      
+    </div>
   );
 };

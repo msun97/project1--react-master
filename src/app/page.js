@@ -12,21 +12,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+
     // IntroSection 고정
     ScrollTrigger.create({
       trigger: ".intro-section",
       start: "top top",
-      end: "bottom -100%",
+      end: "bottom",
       pin: true,
     });
 
     // card1 올라오는 애니메이션
+    if (isMobile) {
+      gsap.fromTo(".card1-section",
+        {
+          y: "-803px",
+        },
+        {
+          y: "-400px",
+          scrollTrigger: {
+            trigger: ".intro-section",
+            start: "top bottom",
+            end: "top top",
+            scrub: 1,
+            invalidateOnRefresh: true,
+          }
+        }
+      );
+    } else {
     gsap.fromTo(".card1-section",
       {
         y: "-953px",
       },
       {
-        y: "0px",
+        y: "-400px",
         scrollTrigger: {
           trigger: ".intro-section",
           start: "top bottom",
@@ -36,37 +55,83 @@ export default function Home() {
         }
       }
     );
+  }
 
+    // Card1Section 하단부 고정
     ScrollTrigger.create({
       trigger: ".card1-section",
-      start: "center center", // 화면 중앙에 왔을 때 고정 시작
-      end: "+=100%", // 스크롤을 한 화면 높이만큼 더 했을 때 고정 해제
-      pin: true,
-      pinSpacing: true,
+      start: "bottom bottom+=10%",
+      endTrigger: ".card2-section",
+      end: "top top",
+      pin: "true",
     });
 
-    // Card2Section 애니메이션
+    // Card2Section 올라오는 애니메이션
+    if (isMobile) {
+      gsap.fromTo(".card2-section",
+        {
+          y: "-300px",
+        },
+        {
+          y: "-600px",
+          scrollTrigger: {
+            trigger: ".card1-section",
+            start: "bottom bottom+=10%",
+            end: "bottom top",
+            scrub: 1,
+            invalidateOnRefresh: true,
+          }
+        }
+      );
+    } else {
     gsap.fromTo(".card2-section",
       {
-        y: "100vh",
+        y: "-400px",
       },
       {
-        y: "0",
+        y: "-600px",
         scrollTrigger: {
           trigger: ".card1-section",
-          start: "center center", // Card1Section이 고정되는 시점과 동일하게
-          end: "+=100%",
+          start: "bottom bottom+=10%",
+          end: "bottom top",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      }
+    );
+  }
+    
+
+    ScrollTrigger.create({
+      trigger: ".card2-section",
+      start: "bottom bottom+=10%",
+      endTrigger: ".card3-section",
+      end: "top top",
+      pin: "true",
+    });
+
+    // Card2Section 올라오는 애니메이션
+    gsap.fromTo(".card3-section",
+      {
+        y: "-500px",
+      },
+      {
+        y: "-1200px",
+        scrollTrigger: {
+          trigger: ".card2-section",
+          start: "bottom bottom+=30%",
+          end: "bottom top",
           scrub: 1,
           invalidateOnRefresh: true,
         }
       }
     );
 
+
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, []);
-
   return (
     <main style={{ position: 'relative', overflow: 'hidden' }}>
       <Nav variant="page" />
@@ -80,8 +145,10 @@ export default function Home() {
         <section className="card2-section">
           <Card2Section />
         </section>
+        <section className="card3-section">
+          <Card3Section />
+        </section>
       </div>
-      <Card3Section />
     </main>
   );
 }

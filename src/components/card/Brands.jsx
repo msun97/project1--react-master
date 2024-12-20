@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { gsap } from "gsap";
 import styles from '../css/Brands.module.scss';
+import { Grid } from 'swiper/modules';
+import 'swiper/css/grid';
 
 const brands = [
   { name: "CLIO PROFESSIONAL", className: "clio" },
@@ -76,9 +78,46 @@ const Brands = () => {
     <div className={styles.brandsCard}>
       <Swiper 
         className={styles.brandSwiper}
-        spaceBetween={10}
-        slidesPerView={'auto'}
+        modules={[Grid]}
+        direction="horizontal"
+        spaceBetween={16}
+        slidesPerGroup={1}
+        speed={800}
+        grid={{
+          rows: 1,
+          fill: 'row'
+        }}
+        breakpoints={{
+          // PC
+          1024: {
+            slidesPerView: 4,
+            grid: {
+              rows: 1
+            },
+            spaceBetween: 16,
+          },
+          // 태블릿
+          768: {
+            slidesPerView: 2,
+            grid: {
+              rows: 2,
+              fill: 'row'
+            },
+            spaceBetween: 15,
+          },
+          // 모바일
+          320: {
+            slidesPerView: 1.5,
+            grid: {
+              rows: 2,
+              fill: 'row'
+            },
+            spaceBetween: 10,
+          }
+        }}
       >
+
+
         {brands.map((brand, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
             <a href="#">

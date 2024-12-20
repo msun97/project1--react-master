@@ -1,0 +1,98 @@
+@use '../../app/css/breakpoint' as break;
+@use '../../app/css/variable' as vars;
+
+.missionListItem{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    @include break.mobileMore{
+      flex-direction: row;
+      gap: 40px;
+    }
+    @include break.tabletMore{
+        gap: 60px;
+      }
+}
+
+.missionListImg{
+    width: 80px;
+    height: 80px; 
+    @include break.mobileMore{
+      width: 100px;
+      height: 100px;
+    }
+    @include break.tabletMore{
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .missionListTxtTitle{
+    font-size: 1.7rem;
+    font-weight: 600;
+    @include break.mobileMore{
+      font-size: 2rem;
+    }
+    @include break.tabletMore{
+        font-size: 2.4rem;
+      }
+  }
+
+  .missionListTxtContent{
+    font-size: 1.4rem;
+    font-weight: 400;
+    white-space: pre-line;
+    @include break.mobileMore{
+      font-size: 1.7rem;
+    }
+    @include break.tabletMore{
+      font-size: 1.8rem;
+    }
+  }
+
+  .challengeImg{
+    background-image: url('../../../public/images/pattern/challenge-icon.png');
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    @include break.mobileMore{
+      width: 100px;
+      height: 100px;
+    }
+    @include break.tabletMore{
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+
+  .connectionImg{
+    background-image: url('../../../public/images/pattern/connection-icon.png');
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    @include break.mobileMore{
+      width: 104px;
+      height: 100px;
+    }
+    @include break.tabletMore{
+        width: 120px;
+        height: 120px;
+      }
+}
+
+.enjoymentImg{
+    background-image: url('../../../public/images/pattern/enjoyment-icon.png');
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    @include break.mobileMore{
+      width: 100px;
+      height: 100px;
+    }
+    @include break.tabletMore{
+      width: 120px;
+      height: 120px;
+    }
+  }
+

@@ -56,12 +56,15 @@
       .txt {
         width: 100%;
         color: white;
-        font-size: 2rem;
+        font-size: 1.6rem;
         justify-content: center;
         text-align: center;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         white-space: pre-line; 
+        @include break.tabletMore{
+          font-size: 2rem;
+        }
       }
     }
   }

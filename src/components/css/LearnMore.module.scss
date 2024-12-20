@@ -1,0 +1,9 @@
+@use '../../app/css/breakpoint' as break;
+@use '../../app/css/variable' as vars;
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}

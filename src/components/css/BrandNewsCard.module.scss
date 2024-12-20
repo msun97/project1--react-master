@@ -32,6 +32,7 @@
       flex-direction: column;
       gap: 6px;
       padding: 12px 28px;
+
       @include break.mobileMore{
         height: 88px;
         gap:10px;
@@ -58,6 +59,11 @@
       &Cont{
         font-size: 1.6rem;
         font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 두 줄로 제한 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
         @include break.mobileMore{
           height: 42px;
           font-size: 1.4rem;

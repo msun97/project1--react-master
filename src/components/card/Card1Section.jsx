@@ -1,7 +1,6 @@
 import { SectionWrapper } from "@/components/card/SectionWrapper";
 import { EPOCard } from "@/components/card/EPOCard";
 import Brands from "./Brands";
-import 'swiper/swiper-bundle.css';
 
 import styles from "../css/Card1.module.scss";
 
@@ -20,7 +19,7 @@ const Card1Section = () => {
       <EPOCard />
     </SectionWrapper>
     <SectionWrapper
-      id={styles.brands}
+      id={`${styles.brands}`}
       ContentclassName={styles.content}
       title="Brands"
       learnMoreLink="/brands"

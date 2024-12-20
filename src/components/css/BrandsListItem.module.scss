@@ -1,0 +1,130 @@
+@use '../../app/css/breakpoint' as break;
+@use '../../app/css/variable' as vars;
+
+.brandsListItem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include break.mobileMore{
+      flex-direction: row;
+      gap: 35px;
+    }
+    @include break.tabletMore{
+      gap: 0;
+    }
+}
+
+.brandsListImg{
+    height: 340px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position:50%;
+    @include break.mobileMore{
+        width: 350px;
+      }
+      @include break.tabletMore{
+        width: 50%;
+      }
+  }
+
+  .clioImg{
+    background-image: url('../../../public/images/pattern/brand_cont01_img06.jpg');
+  }
+
+  .periperaImg{
+    background-image: url('../../../public/images/pattern/brand_cont02_img10.jpg');
+  }
+
+  .goodalImg{
+    background-image: url('../../../public/images/pattern/brand_cont03_img06.jpg');
+  }
+
+  .dermatoryImg{
+    background-image: url('../../../public/images/pattern/brand_cont04_img02.jpg');
+  }
+
+  .healingbirdImg{
+    background-image: url('../../../public/images/pattern/brand_cont05_img04.jpg');
+  }
+
+  .ablackImg{
+    background-image: url('../../../public/images/pattern/brand_cont07_img02.jpg');
+  }
+
+  .twinklepopImg{
+    background-image: url('../../../public/images/pattern/brand_cont08_img02.jpg');
+  }
+
+
+  .brandsListTxt{
+    width: 90%;
+    font-size: 1.3rem;
+    color: vars.$gray-70;
+    line-height: 1.5;
+    @include break.mobileMore{
+        width: 50%;
+      }
+    @include break.tabletMore{
+        padding: 45px 55px 55px 55px;
+      }
+  }
+
+  .brandsListTxtTitle{
+    height: 50px;
+    margin-bottom: 13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include break.tabletMore{
+      height: 80px;
+    }
+  }
+
+  .cliologo{
+    background-image: url('../../../public/images/pattern/logo_clio.png');
+  }
+
+  .periperalogo{
+    background-image: url('../../../public/images/pattern/logo_peripera.png');
+  }
+  .goodallogo{
+    background-image: url('../../../public/images/pattern/logo_goodal.png');
+  }
+  .dermatorylogo{
+    background-image: url('../../../public/images/pattern/logo_dermatory.png');
+  }
+  .healingbirdlogo{
+    background-image: url('../../../public/images/pattern/logo_healing_bird.png');
+  }
+  .ablacklogo{
+    background-image: url('../../../public/images/pattern/logo_ablack.png');
+  }
+  .twinklepoplogo{
+    background-image: url('../../../public/images/pattern/logo_twinklepop.png');
+  }
+
+  .learnMore{
+    position: relative; 
+    margin-top: 20px;
+    margin-left: 32px;
+    @include break.mobileMore{
+      top: 0;
+      left: 0;
+    }
+  }
+
+.enjoymentImg{
+    background-image: url('../../../public/images/pattern/enjoyment-icon.png');
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    @include break.mobileMore{
+      width: 100px;
+      height: 100px;
+    }
+    @include break.tabletMore{
+      width: 120px;
+      height: 120px;
+    }
+  }
+

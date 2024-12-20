@@ -4,6 +4,7 @@
 .gnb{
   display: none;
   position: relative;
+  height: 100%;
   @include break.tabletMore{
     display: block;
   }
@@ -32,54 +33,64 @@
   }
 }
 }
-
-.gnb__depth1{
+.gnbDepth1{
     display: flex;
     width: 720px;
     color: vars.$white;
+    font-size: 1.8rem;
+    height: 100%;
     // gap: 10px;
     >li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 180px;
       position: relative;
+      height: 100%;
       &:hover{
-        >a>span::after{
+        >div>a>span::after{
           width:100%;
         }
-        > .gnb__depth2{
+        >ul{
           display: flex;
         }
       } 
-      > a{
-        display: flex;
-        font-size: 1.8rem;
-        font-weight: 500;
-        height: 80px;
-        padding: 0 40px;
-        justify-content: center;
-        align-items: center;
-        > span{ 
-          &:hover{
-            color:vars.$primary;
-          }   
-          position: relative;
+      >div{
+        height: 100%;
+        > a{
           display: flex;
+          font-size: 1.8rem;
+          font-weight: 500;
           height: 100%;
-          justify-items: center;
+          padding: 0 40px;
+          justify-content: center;
           align-items: center;
-          &::after{
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 0);
-            content: '';
-            width: 0;
-            height: 3px;
-            background-color: vars.$gray-50;
-            transition: width 0.5s;
+          > span{ 
+            &:hover{
+              color:vars.$primary;
+            }   
+            position: relative;
+            display: flex;
+            height: 100%;
+            justify-items: center;
+            align-items: center;
+            &::after{
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translate(-50%, 0);
+              content: '';
+              width: 0;
+              height: 3px;
+              background-color: vars.$gray-50;
+              transition: width 0.5s;
+
+            }
           }
         }
       }
+
     }
 }
 
@@ -110,17 +121,18 @@
 
 .navAll{
   display: none;
-  position: absolute;
-  top: 66px;
+  position: fixed;
+  top: 0px;
   left: 0;
-  z-index: 2;
+  z-index: 100;
   width: 100%;
   height: 100vh;
   background-color: rgba(vars.$gray-70, 0.6);
   backdrop-filter: blur(90px);
   color: vars.$white;
   @include break.mobileMore{
-    top: 80px;
+    padding-top:88px;
+
   }
   > ul >li{
     display: flex;
@@ -137,9 +149,11 @@
       align-items: center;
       width: 140px;
       height: 80px;
+      margin-top: 80px;
       @include break.mobileMore{
         width: 268px;
         height: 90px;
+        margin: 0;
       }
       >a{
         display: block;
@@ -154,9 +168,11 @@
       }
       &::after{
         content: "";
+        position: absolute;
         width: 1px;
         height: 100vh;
         background-color: vars.$gray-50;
+        top: 66px;
       }
     }
     >.active >a{
@@ -168,6 +184,7 @@
     }
     ul.activeDepth2{
       display: block !important; 
+      padding-top: 80px;
     }
   }
 }
@@ -182,6 +199,9 @@
   position: absolute;
   top: 0;
   left: 40%;
+  @include break.mobileMore{
+    left: 300px;
+  }
   >li{
     position: relative;
     display: flex;

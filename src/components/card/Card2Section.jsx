@@ -3,6 +3,7 @@ import { SocialMediaCard } from "@/layout/Card/SocialMediaCard";
 import { SectionWrapper } from "@/components/card/SectionWrapper";
 import styles from "../css/Card2.module.scss"
 import BrandNewsCard from "./BrandNewsCard";
+import LearnMore from "../LearnMore";
 
 
 const Card2Section = () => {
@@ -12,9 +13,11 @@ const Card2Section = () => {
       id={styles.brandNews}
       title="Brands News"
       description="브랜드 공지사항 및 보도자료"
-      learnMoreLink="news.html"
+      learnMoreLink="/news"
       >
+        <div className="wrap">
         <BrandNewsCard />
+        </div>
       </SectionWrapper>
       <SectionWrapper id={styles.sns} title="Social Media">
         <div className={styles.snsCard}>
@@ -31,11 +34,12 @@ const Card2Section = () => {
         </SocialMediaCard>
         <SocialMediaCard platform="Instagram">
           <div className={styles.snsInstagramCard}>
-            <a href="#" aria-label="Visit Instagram Card 1">
-              <div className={`${styles.snsInstagramCardInner}sns-instagram-card1`}></div>
+            <a href="#" className={`${styles.snsInstagramCardInner}`} aria-label="Visit Instagram Card 1">
+              <div className={styles.instagCard1}>
+              </div>
             </a>
-            <a href="#" aria-label="Visit Instagram Card 2">
-              <div className="sns-instagram-card2"></div>
+            <a href="#" className={`${styles.snsInstagramCardInner}`} aria-label="Visit Instagram Card 2">
+              <div className={styles.instagCard2}></div>
             </a>
           </div>
         </SocialMediaCard>

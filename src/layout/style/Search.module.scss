@@ -1,0 +1,82 @@
+@use "../../app/css/breakpoint" as break;
+@use "../../app/css/variable" as vars;
+
+.searchTab{
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 231px;
+    background-color: vars.$secondary-90;
+    @include break.mobileMore{
+      height: 274px;
+    }
+    @include break.tabletMore{
+      height: 294px;
+    }
+}
+
+.active{
+    display: flex;
+}
+
+
+.inner{
+    position: relative;
+    width: 349px;
+    height: 154px;
+    bottom: 50px;
+    color: vars.$white;
+    align-items: flex-end;
+    @include break.mobileMore{
+      width: 728px;
+      height: 194px;
+    }
+    @include break.tabletMore{
+      width: 1000px;
+      height: 77px;
+    }
+}
+
+.content{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#search{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: 2px vars.$white solid;
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: vars.$white;
+    opacity: 1;
+    @include break.mobileMore{
+      font-size: 3rem;
+    }
+  }
+
+
+  .descripte{
+    display: flex;
+    gap: 10px;
+    opacity: 0.6;
+    margin-top: 9px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    @include break.mobileMore{
+      font-size: 1.8rem;
+    }
+  }
+
+  .close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

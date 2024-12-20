@@ -1,0 +1,143 @@
+@use "../css/variable" as vars;
+@use "../css/breakpoint" as break;
+
+
+.lnb{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    color: vars.$black;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    z-index: 1;
+    @include break.mobileMore{
+      left:auto;
+      right:0;
+      transform: translateX(0);
+      padding: 0 30px;
+      font-size: 1.4rem;
+    }
+    @include break.tabletMore{
+      padding: 0 320px;
+    }
+    ul{
+      display: flex;
+      align-items: center;
+      @include break.mobileMore{
+        align-items: center;
+      }
+    a{
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    svg{
+        width: 13px;
+        height: 13px;
+        @include break.mobileMore{
+            width: 16px;
+            height: 16px;
+        }
+    }
+      li:nth-child(5){
+        font-weight: 600;
+      }
+    }
+}
+
+#brands{
+  color: vars.$black;
+  margin-bottom: 60px;
+}
+
+.inner{
+  width: 100%;
+}
+
+.innerTop{
+  padding-top: 170px;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  @include break.mobileMore{
+    padding-top: 130px;
+  }
+    @include break.tabletMore{
+      width: 100%;
+      font-size: 5rem;
+    }
+}
+
+.subTitle{
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 45px;
+}
+
+.brandsList{
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  gap: 45px;
+  @include break.mobileMore{
+    padding: 0 30px;
+    gap: 30px;
+  }
+  @include break.tabletMore{
+    padding: 0 160px;
+  }
+}
+
+
+.border{
+  width: 40px;
+  height: 1px;
+  background-color: vars.$primary;
+  margin-top: 26px;
+  margin-left: 50%;
+  margin-bottom: 36px;
+  transform: translateX(-50%)
+}
+  .borderLine{
+    width: 100%;
+    height: 1px;
+    background-color: vars.$white;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    @include break.mobileMore{
+      margin-bottom: 42px;
+    }
+    @include break.tabletMore{
+      width: 80%;
+    }
+  }
+
+
+  .content{
+    width: 300px;
+    padding-bottom: 120px;
+    @include break.tabletMore{
+      padding-bottom: 108px;
+    }
+      @include break.mobileMore{
+        width: 100%;
+      }
+  }
+
+  .BsubTitle{
+    font-size: 2.5rem;
+    line-height: 1.5;
+    @include break.mobileMore{
+        font-size: 3rem;
+      }
+  }
+
+  .Btitle{
+    font-size: 3.7rem;
+    line-height: 1.5;
+    @include break.mobileMore{
+      font-size: 5rem;
+    }
+  }

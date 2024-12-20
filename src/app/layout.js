@@ -7,6 +7,7 @@ import { metadata } from "@/data/metadata";
 import { NavProvider } from "@/layout/Header/NavProvider";
 
 import Head from "next/head";
+import Footer from "@/layout/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           <div className="wrap">
             <Header />
             {children}
+            <Footer />
           </div>
         </NavProvider>
       </body>

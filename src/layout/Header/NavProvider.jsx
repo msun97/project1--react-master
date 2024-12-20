@@ -11,8 +11,12 @@ export const NavProvider = ({ children }) => {
     setIsNavAllOpen((prev) => !prev);
   };
 
+  const closeNavAll = () => {
+    setIsNavAllOpen(false);
+  };
+
   return (
-    <NavContext.Provider value={{ isNavAllOpen, toggleNavAll }}>
+    <NavContext.Provider value={{ isNavAllOpen, toggleNavAll, closeNavAll }}>
       {children}
     </NavContext.Provider>
   );

@@ -338,7 +338,7 @@ caption {
   position: absolute;
   display: flex;
   align-items: center;
-  top: 31%;
+  top: 0;
   right: 15px;
   font-size: 1.5rem;
   font-weight: 500;
@@ -366,19 +366,6 @@ caption {
     @include break.tabletMore{
       width: 80px;
       height: 80px;
-    }
-  }
-  &::after{
-    content: "\f067";
-    font-family: 'Line Awesome Free';
-    padding: 0.8rem;
-    font-size: 1.2rem;
-    font-weight: 900;
-    @include break.mobileMore{
-      font-size: 2rem;
-    }
-    @include break.tabletMore{
-      padding: 14px;
     }
   }
 }
@@ -445,14 +432,18 @@ caption {
   }
 }
 
+main{
+  height: fit-content;
+}
+
 .scroll-section {
+  margin-bottom: -1000px;
   position: relative;
 }
 
 .intro-section,
 .card1-section,
 .card2-section {
-  height: 100vh;
   width: 100%;
 }
 
@@ -465,7 +456,7 @@ caption {
   position: relative;
   z-index: 2;
   background: #fff;
-}
+} 
 
 .card2-section {
   position: relative;
@@ -473,7 +464,76 @@ caption {
   background: #fff;
 }
 
+.card3-section{
+  position: relative;
+  z-index: 4;
+  background: #fff;
+}
+
 main {
   position: relative;
   overflow-x: hidden;
 }
+
+.recommendedimg1{
+  background-image: url('../../../public/images/pattern/seling1.gif');
+}
+
+.recommendedimg2{
+  background-image: url('../../../public/images/pattern/seling2.gif');
+}
+
+.recommendedimg3{
+  background-image: url('../../../public/images/pattern/seling3.gif');
+}
+
+.recommendedimg4{
+  background-image: url('../../../public/images/pattern/seling4.gif');
+}
+
+
+  
+
+.swiper-pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  bottom: 250px !important;
+  left:50% !important;
+  transform: translate(-50%, 50%) !important;
+  @include break.mobileMore{
+    bottom: 106px;
+  }
+  @include break.tabletMore{
+    bottom: 140px;
+  }
+  .swiper-pagination-bullet{
+    border: vars.$white 2px solid;
+    opacity: 1;
+    background-color: rgba(255,255,255,0) !important;
+    @include break.tabletMore{
+      width: 32px;
+      height: 5px;
+      border: vars.$white 1px solid;
+      border-radius: 20px;
+      }
+      &-active{
+        background-color: rgba(255,255,255,1) !important;
+      }
+    }
+  }
+
+ .BrandsListItem-module-scss-module__2VUvwW__brandsListItem{
+    .learn-more{
+      top:380px;
+      @include break.mobileMore{
+        top: -5%;
+        right: 30px;
+       }
+       @include break.tabletMore{
+        top: 0;
+        right: 160px;
+        font-size: 1.8rem;
+      }
+    }
+  }

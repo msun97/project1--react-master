@@ -7,14 +7,17 @@ import Link from 'next/link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { useNavContext } from './NavProvider';
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import styles from '../style/Header.module.scss';
 import gsap from 'gsap';
 
 const Header = () => {
-  const { isNavAllOpen, toggleNavAll } = useNavContext();
   const [isActive, setIsActive] = useState(false);
   const headerRef = useRef(null);
+  const { isNavAllOpen, toggleNavAll, closeNavAll } = useNavContext();
+  const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
     setIsActive(window.scrollY > 1);
@@ -32,6 +35,17 @@ const Header = () => {
       {y: 0, ease: 'Power3.easeInOut', duration: 0.75}
     );
   }, []);
+
+  useEffect(() => {
+    if (isNavAllOpen) {
+      closeNavAll();
+    }
+  }, [pathname]);
+
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const toggleSearch = () => setIsSearchOpen((prev => !prev));
+  const closeSearch = () => setIsSearchOpen(false);
+
 
   return (
     <header
@@ -53,8 +67,10 @@ const Header = () => {
           onHamburgerClick={toggleNavAll}
           utiletc={styles.utilEtc}
           hamburger={styles.hamburger}
+          onSearchClick={toggleSearch}
+          isNavOpen={isNavAllOpen}
         />
-        <Search />
+        <Search isActive={isSearchOpen} onClose={closeSearch}/>
       </div>
     </header>
   );

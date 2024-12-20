@@ -1,17 +1,19 @@
+import styles from '../style/RecommendedProductCard.module.scss';
+
 export const RecommendedProductCard = ({product}) => {
   // product나 product.imgClass가 undefined일 경우 대비
   if (!product) return null;
 
   return (
-    <div className="comment-item">
-      {product.imgClass && <div className={`product-img ${product.imgClass}`}></div>}
-      <div className="txt">
-        <div className="tag">{product.tag}</div>
-        <div className="comment-title">{product.title}</div>
-        <div className="price">
+    <div className={styles.commentItem}>
+      {product.imgClass && <div className={`${styles.recommendedProductImgBig} ${product.imgClass}`}></div>}
+      <div className={styles.txt}>
+        <div className={styles.tag}>{product.tag}</div>
+        <div className={styles.commentTitle}>{product.title}</div>
+        <div className={styles.price}>
           <div className="price-origin">{product.originalPrice}원</div>
-          <div className="sale">{product.salePrice}원</div>
-          <div className="saleper">{product.salePercentage}</div>
+          <div className={styles.sale}>{product.salePrice}원</div>
+          <div className={styles.saleper}>{product.salePercentage}</div>
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
+import styles from '../style/Utils.module.scss';
+import { IoSearch } from "react-icons/io5";
+import { IoMdClose, IoMdMenu } from 'react-icons/io';
 
-export const Util = ({ onHamburgerClick , utiletc,hamburger}) => {
+export const Util = ({ onHamburgerClick , utiletc,hamburger, onSearchClick, isNavOpen}) => {
   const [language, setLanguage] = useState('KO');
 
-  const handleSearch = () => {
-    console.log('Search button clicked');
-  };
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
@@ -18,16 +18,16 @@ export const Util = ({ onHamburgerClick , utiletc,hamburger}) => {
   };
 
   return (
-    <div className="util">
-      <div className={utiletc}>
-        <button 
-          className="search" 
-          onClick={handleSearch} 
+    <div className={styles.util}>
+      <div className={`${utiletc} ${styles.utilEtc}`}>
+        <div 
+          className={styles.search}
+          onClick={onSearchClick} 
           aria-label="Search"
-        >
-          <span className="blind">검색</span>
-        </button>
-        <div className="lang__btn-group">
+        > 
+        <IoSearch />
+        <span className="blind">검색</span>
+        </div>
           {['KO', 'EN'].map((lang) => (
             <button
               key={lang}
@@ -38,20 +38,22 @@ export const Util = ({ onHamburgerClick , utiletc,hamburger}) => {
               {lang}
             </button>
           ))}
-        </div>
         <button 
           className="login" 
           onClick={handleLogin}
           aria-label="Login"
         >
-          로그인
+          Login
         </button>
       </div>
       <button 
-        className={hamburger}
+        className={`${hamburger} ${styles.hamburger} `}
         onClick={onHamburgerClick} 
         aria-label="Open menu"
-      >햄버거</button>
+      >
+        {isNavOpen ? <IoMdClose /> : <IoMdMenu />}
+        <span className="blind">메뉴</span>
+      </button>
     </div>
   );
 };

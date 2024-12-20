@@ -14,9 +14,9 @@ const navData = [
       title: "BRANDS",
       link: "#",
       subMenu: [
-        { title: "Brands", link: "brands.html" },
+        { title: "Brands", link: "/brands" },
         { title: "Advertisement", link: "#" },
-        { title: "Brand 뉴스", link: "news.html" },
+        { title: "Brand 뉴스", link: "/news" },
         { title: "제휴/협력 문의", link: "#" },
       ],
     },

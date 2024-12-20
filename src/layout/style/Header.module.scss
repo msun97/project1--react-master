@@ -168,7 +168,7 @@
           display: block;
         }
       }
-      div::before{
+      > button::after{
         position: absolute;
         content: '';
         left:-8px;
@@ -181,29 +181,10 @@
       .search{
         transform: scale(-1, 1);
       }
-      .search::after{
-        content: "\f002";
-        font-family: 'Line Awesome Free';
-        font-weight: 900;
-        font-size: 2rem;
-        @include break.mobileMore{
-          font-size: 1.8rem;
-        }
-      }
     }
     .hamburger{
       @include break.tabletMore{
         display: none;
-      }
-        &::before{
-        content: "\f0c9";
-        font-size: 2rem;
-        font-weight: 900;
-        font-family: 'Line Awesome Free';
-        @include break.mobileMore{
-          font-size: 3.5rem;
-        }
-        
       }
     }
     
@@ -278,22 +259,10 @@
 
 .navAll{
   .utilEtc{
-    > div{
-      display: block;
-      background-color: #000;
-    }
+    color: vars.$white;
   }
   .hamburger::before{
     display: none;
-  }
-  .hamburger::after{
-      content: "\f00d";
-      font-size: 2rem;
-      font-weight: 900;
-      font-family: 'Line Awesome Free';
-      @include break.mobileMore{
-        font-size: 3rem;
-      }
   }
 }
 

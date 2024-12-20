@@ -1,0 +1,79 @@
+@use "../../app/css/breakpoint" as break;
+@use "../../app/css/variable" as vars;
+
+.commentItem{
+    width: 45%;
+    height: auto;
+    border-radius: 20px;
+    @include break.mobileMore{
+      width: 25%;
+    }
+    @include break.tabletMore{
+        height: 100%;
+    }
+  }
+
+
+.recommendedProductImgBig{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 20px;
+    @include break.tabletMore{
+      height: 440px;
+    }
+}
+
+.txt{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    padding: 15px 0px;
+    @include break.mobileMore{
+      width: 100%;
+      gap: 7px;
+    }
+    @include break.tabletMore{
+        width: 100%;
+        padding: 30px 24px;
+      }
+}
+
+.tag{
+    color: vars.$gray-40;
+    font-size: 1.4rem;
+    font-weight: 400;
+    @include break.mobileMore{
+      font-size: 1.3rem;
+    }
+}
+
+.commentTitle{
+    font-size: 1.4rem;
+    font-weight: 500;
+    @include break.tabletMore{
+      font-size: 2rem;
+    }
+  }
+  .price{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    @include break.tabletMore{
+        gap: 10px;
+      }
+    }
+      .sale{
+        color: vars.$gray-50;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-decoration: line-through;
+      }
+      .saleper{
+        color: vars.$point;
+      }

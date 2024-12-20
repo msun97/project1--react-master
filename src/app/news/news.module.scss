@@ -1,0 +1,336 @@
+@use "../css/variable" as vars;
+@use "../css/breakpoint" as break;
+
+.blnb{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    color: vars.$white;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    z-index: 1;
+    @include break.mobileMore{
+      left:auto;
+      right:0;
+      transform: translateX(0);
+      padding: 0 30px;
+      font-size: 1.4rem;
+    }
+    @include break.tabletMore{
+      padding: 0 320px;
+    }
+    ul{
+      display: flex;
+      align-items: center;
+      @include break.mobileMore{
+        align-items: center;
+      }
+    a{
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    svg{
+        width: 13px;
+        height: 13px;
+        @include break.mobileMore{
+            width: 16px;
+            height: 16px;
+        }
+    }
+      li:nth-child(5){
+        font-weight: 600;
+      }
+    }
+}
+
+.innerTop{
+    height: 320px;
+    background-image: linear-gradient(rgba($color: vars.$black, $alpha:0.3 ), rgba($color: vars.$black, $alpha:0.3 )), url('../../../public/images/pattern/brand_bg.jpg');
+    background-position: 50%;
+    background-size: cover;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 180px;
+    color: vars.$white;
+    text-align: center;
+    font-size: 3.7rem;
+    font-weight: 600;
+    @include break.mobileMore{
+      text-align: left;
+      margin-left: 20px;
+      padding-left: 12px;
+      font-size: 4rem;
+    }
+    @include break.tabletMore{
+      padding-left: 0;
+      margin-left: 320px;
+      font-size: 5rem;
+    }
+}
+
+.subTitle{
+    font-size: 1.9rem;
+    opacity: 0.7;
+}
+
+.newsContent{
+    padding: 0 15px;
+    margin-top: 50px;
+    @include break.mobileMore{
+      margin-top: 80px;
+      padding: 0 30px;
+    }
+    @include break.tabletMore{
+      padding: 0 320px;
+    }
+}
+
+.newsCategory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: vars.$gray-10;
+    border-radius: 5px;
+}
+
+.newsCategoryWrap{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  @include break.mobileMore{
+    gap: 10px;
+  }
+}
+
+.active{
+  background-color: vars.$white;
+  color: vars.$gray-90;
+  font-weight: 600;
+  border-radius: 5px;
+  @include break.mobileMore{
+    font-size: 1.8rme;
+  }
+}
+
+.newsSearch{
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  height: 40px;
+  padding: 8px 0;
+  @include break.mobileMore{
+    margin-top: 40px;
+    padding: 0;
+    gap: 30px;
+    justify-content: flex-end;
+  }
+}
+
+
+.selected{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 100%;
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 20px;
+  color: vars.$gray-90;
+  cursor: pointer;
+  @include break.mobileMore{
+    width: 150px;
+    padding-left: 0;
+    font-size: 1.6rem;
+  }
+}
+
+.newsSearchCategory{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-left: 20px;
+  width: 80px;
+  border: 1px solid vars.$gray-40;
+  color: vars.$gray-90;
+  font-size: 1.5rem;
+  text-align: left;
+  align-items: flex-start;
+  background-color: vars.$white;
+  border: none;
+  opacity: 0.8;
+  z-index: 1;
+  @include break.mobileMore{
+    width: 150px;
+    margin-left: 0;
+    font-size: 1.6rem;
+    border: none;
+  }
+  button{
+    width: 80px;
+    text-align: left;
+    @include break.mobileMore{
+      width: 100%;
+      height: 40px;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: vars.$gray-40;
+      @include break.mobileMore{
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.searchActive{
+  display: flex !important;
+}
+
+.serachNotiveTab{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include break.mobileMore{
+    width: auto;
+  }
+}
+
+
+.serachNotice{
+  margin-left: 10px;
+  width: auto;
+  height: 100%;
+  border: none;
+  font-size: 1.5rem;
+  color: vars.$gray-60;
+  @include break.mobileMore{
+    width: 380px;
+    font-size: 1.6rem;
+    margin-left: none;
+  }
+}
+
+
+.searchBtn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: linear-gradient(vars.$primary, #644190);
+  transform: scale(-1, 1);
+  @include break.mobileMore{
+    width: 40px;
+    height: 40px;
+  }
+  svg{
+    width: 13px;
+    height: 13px;
+    color: vars.$white;
+    @include break.mobileMore{
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+
+.newsList{
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  text-align: center;
+  @include break.mobileMore{
+
+    .num{
+      width: 5%;
+    }
+    .category{
+      width: 12%;
+    }
+    .tlt{
+      width:58%;
+    }
+    .day{
+      width:15%;
+    }
+    .see{
+      width: 10%;
+    }
+  }
+  &::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: vars.$gray-90;
+  }
+}
+
+.newsListMenu{
+  position: relative;
+  display: none;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 1.6rem;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: vars.$gray-20;
+  }
+  @include break.mobileMore{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.pageMove{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  font-size: 1.5rem;
+  color: vars.$gray-60;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  @include break.mobileMore{
+    font-size: 1.6rem;
+    margin-bottom: 100px;
+  }
+}
+
+.btnNum{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.active{
+  background-color: vars.$primary-60;
+  color: vars.$white;
+}

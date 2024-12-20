@@ -1,0 +1,215 @@
+@use '../../app/css/variable' as vars;
+@use '../../app/css/breakpoint' as break;
+
+
+#card3{
+    position: relative;
+    top: -100px;
+    width:100%;
+    padding: 40px 0;
+    border-radius: 30px; 
+    background-color: vars.$white;
+    color: vars.$gray-90;
+    transform: translateY(-100px);
+    padding: 40px 0;
+    @include break.mobileMore{
+        transform: translateY(0);
+        margin-top: -210px;
+        border-radius: 60px;
+        padding: 90px 0;
+      }
+      @include break.tabletMore{
+        margin-top: -325px;
+        border-radius: 90px;
+        padding: 140px 0;
+      }
+}
+
+.comment{
+    position: relative;
+    padding: 0 15px;
+    @include break.mobileMore{
+      padding: 0 30px;
+    }
+    @include break.tabletMore{
+      padding: 0 160px;
+    }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  @include break.tabletMore{
+    gap: 10px;
+  } 
+}
+
+.title{
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 150%;
+  @include break.mobileMore{
+    font-size: 5rem;
+   }
+   @include break.tabletMore{
+    font-size: 6rem;
+  } 
+}
+
+.descripte{
+  font-size: 1.7rem;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-top: 5px;
+  @include break.mobileMore{
+    margin-top: 2px;
+    font-size: 1.8rem;
+   }
+   @include break.tabletMore{
+    font-size: 2rem;
+  } 
+  }
+.commentCard{
+  margin-top: 76px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  @include break.mobileMore{
+    margin-top: 70px;
+    height: 385px;
+    flex-wrap: nowrap;
+  }
+  @include break.tabletMore{
+    margin-top: 50px;
+    height: 622px;
+    gap: 60px;
+  }
+}
+
+.new{
+  position: relative;
+  margin-top: 50px;
+  @include break.mobileMore{
+    margin-top: 80px;
+    margin-bottom: 0px;
+  }
+  @include break.tabletMore{
+    margin-top: 104px;
+  }
+}
+
+.newContent{
+  padding: 0 15px;
+  position: relative;
+  @include break.mobileMore{
+    padding: 0 30px;
+  }
+  @include break.tabletMore{
+    padding: 0 160px;
+  }
+}
+
+.slider{
+  margin-top: 65px;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  @include break.mobileMore{
+    margin-top: 70px;
+    height: 620px;
+  }
+  @include break.tabletMore{
+    margin-top: 50px;
+    height: 880px;
+  }
+}
+
+.topSwiper{
+  height: 265px;
+  margin-bottom: 20px;
+  @include break.mobileMore{
+    height: 300px;
+  }
+  @include break.tabletMore{
+    height: 430px;
+  }
+}
+
+.topSlide{
+  transition-timing-function: linear !important;
+  border-radius: 20px;
+}
+
+.small{
+  width: 210px;
+  height: 265px;
+  @include break.mobileMore{
+    width: 250px;
+    height: 300px;
+  }
+  @include break.tabletMore{
+    width: 340px;
+    height: 430px;
+  }
+  img{
+    width: 210px;
+    height: 265px;
+    object-fit: cover;
+    border-radius: 20px;
+    @include break.mobileMore{
+      width: 250px;
+      height: 300px;
+    }
+    @include break.tabletMore{
+      width: 340px;
+      height: 430px;
+    }
+  }
+}
+
+.big{
+  width: 340px;
+  height: 265px;
+  @include break.mobileMore{
+    width: 450px;
+    height: 300px;
+  }
+  @include break.tabletMore{
+    width: 600px;
+    height: 430px;
+  }
+  img{
+    width: 340px;
+    height: 265px;
+    object-fit: cover;
+    border-radius: 20px;
+    @include break.mobileMore{
+      width: 450px;
+      height: 300px;
+    }
+    @include break.tabletMore{
+      width: 600px;
+      height: 430px;
+    }
+  }
+}
+
+.bottomSwiper{
+  margin-bottom: 40px;
+  @include break.mobileMore{
+    margin-bottom: 0px;
+    height: 300px;
+  }
+  @include break.tabletMore{
+    margin-bottom: -1200px;
+    height: 430px;
+  }
+}
+
+.bottomSlide{
+  transition-timing-function: linear !important;
+  border-radius: 20px;
+}
