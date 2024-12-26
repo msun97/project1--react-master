@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from '../style/Utils.module.scss';
 import { IoSearch } from "react-icons/io5";
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
+import Link from 'next/link';
 
 export const Util = ({ onHamburgerClick , utiletc,hamburger, onSearchClick, isNavOpen}) => {
   const [language, setLanguage] = useState('KO');
@@ -38,13 +39,15 @@ export const Util = ({ onHamburgerClick , utiletc,hamburger, onSearchClick, isNa
               {lang}
             </button>
           ))}
-        <button 
-          className="login" 
-          onClick={handleLogin}
-          aria-label="Login"
-        >
-          Login
-        </button>
+        <Link href='/login'>
+          <button 
+            className="login" 
+            onClick={handleLogin}
+            aria-label="Login"
+          >
+            Login
+          </button>
+        </Link>
       </div>
       <button 
         className={`${hamburger} ${styles.hamburger} `}

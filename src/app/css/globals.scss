@@ -1,6 +1,11 @@
 @use 'variable' as vars;
 @use 'utils'as utils;
 @use 'breakpoint' as break;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
  
 html,
 body {
