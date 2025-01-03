@@ -9,6 +9,7 @@ import { NavProvider } from "@/layout/Header/NavProvider";
 import Head from "next/head";
 import Footer from "@/layout/Footer";
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
